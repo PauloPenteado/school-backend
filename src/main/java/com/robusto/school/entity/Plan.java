@@ -17,7 +17,7 @@ public class Plan {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
-	private int id;
+	private int Id;
 	
 	@Column(name="name")
 	private String name;
@@ -45,11 +45,11 @@ public class Plan {
 	}
 
 	public int getId() {
-		return id;
+		return Id;
 	}
 
 	public void setId(int id) {
-		this.id = id;
+		this.Id = id;
 	}
 
 	public String getName() {
@@ -122,7 +122,7 @@ public class Plan {
 
 	@Override
 	public String toString() {
-		return "Plan [id=" + id + ", name=" + name + ", detail1=" + detail1 + ", detail2=" + detail2 + ", detail3="
+		return "Plan [id=" + Id + ", name=" + name + ", detail1=" + detail1 + ", detail2=" + detail2 + ", detail3="
 				+ detail3 + ", price=" + price + ", startDate=" + startDate + ", endtDate=" + endtDate + "]";
 	}
 	
