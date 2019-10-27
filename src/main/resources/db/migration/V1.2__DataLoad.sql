@@ -31,3 +31,8 @@ INSERT INTO plan(name, detail_1, detail_2, detail_3, price) VALUES
     ('Débutant 2 ou plus','1 cours','Niveau Débutant 2 ou plus','Pas à Pas', 119.00),
 	('Débutant ILLIMITÉ','Accès limité pour TOUS les cours niveau débutant 1','','', 129.00),
 	('ILLIMITÉ TOTAL','TOUS les cours','N importe quel niveau','', 189.00);    
+	
+INSERT INTO schedule(course_id, instructor_id, level, day, hour, minutes) VALUES
+	(1,1,'Debutant 1', 1, 17,45),
+	(2,2,'Debutant 2', 1, 19,45),
+	(3,4,'Debutant 3', 3, 18,45);
