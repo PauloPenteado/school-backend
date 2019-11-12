@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -15,12 +17,14 @@ public class Schedule {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="id")
 	private int Id;
+		
+	@JoinColumn(name="course_id")
+	@OneToOne
+	private Course course;
 	
-	@Column(name="course_id")
-	private int courseId;
-	
-	@Column(name="instructor_id")
-	private int instructorId;
+	@JoinColumn(name="instructor_id")
+	@OneToOne
+	private Employee instructor;
 	
 	@Column(name="level")
 	private String level;
@@ -41,21 +45,22 @@ public class Schedule {
 	public void setId(int id) {
 		this.Id = id;
 	}
-
-	public int getCourseId() {
-		return courseId;
+	
+	public Course getCourse() {
+		return course;
 	}
 
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setCourse(Course course) {
+		this.course = course;
 	}
 
-	public int getInstructorId() {
-		return instructorId;
+
+	public Employee getInstructor() {
+		return instructor;
 	}
 
-	public void setInstructorId(int instructorId) {
-		this.instructorId = instructorId;
+	public void setInstructor(Employee instructor) {
+		this.instructor = instructor;
 	}
 
 	public String getLevel() {
@@ -92,9 +97,8 @@ public class Schedule {
 
 	@Override
 	public String toString() {
-		return "Schedule [id=" + Id + ", courseId=" + courseId + ", instructorId=" + instructorId + ", level=" + level
+		return "Schedule [Id=" + Id + ", course=" + course + ", instructor=" + instructor + ", level=" + level
 				+ ", day=" + day + ", hour=" + hour + ", minutes=" + minutes + "]";
 	}
-	
-	
+
 }
