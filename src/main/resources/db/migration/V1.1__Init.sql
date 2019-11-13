@@ -44,5 +44,9 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   `day` INT(1) DEFAULT NULL,
   `hour` INT(2) DEFAULT NULL,
   `minutes` INT(2) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  CONSTRAINT `FK_INSTRUCTOR` FOREIGN KEY (`instructor_id`)
+  REFERENCES `employee` (`id`),
+  CONSTRAINT `FK_COURSE` FOREIGN KEY (`course_id`)
+  REFERENCES `course` (`id`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
