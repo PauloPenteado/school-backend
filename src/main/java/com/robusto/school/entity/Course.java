@@ -1,10 +1,15 @@
 package com.robusto.school.entity;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,6 +30,10 @@ public class Course {
 	@Column(name="is_available")
 	private boolean isAvailable;
 
+	@OneToMany(cascade= {CascadeType.DETACH})
+	@JoinColumn(name="course_id")
+	private List<Schedule> schedules;
+	
 	public int getId() {
 		return Id;
 	}

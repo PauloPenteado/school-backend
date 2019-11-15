@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `plan` (
 
 CREATE TABLE IF NOT EXISTS `schedule` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `course_id` INT(11) NOT NULL,
+  `course_id` INT(11) DEFAULT NULL,
   `instructor_id` INT(11) DEFAULT NULL,
   `level` VARCHAR(500) DEFAULT NULL,
   `day` INT(1) DEFAULT NULL,
@@ -48,5 +48,5 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   CONSTRAINT `FK_INSTRUCTOR` FOREIGN KEY (`instructor_id`)
   REFERENCES `employee` (`id`),
   CONSTRAINT `FK_COURSE` FOREIGN KEY (`course_id`)
-  REFERENCES `course` (`id`) 
+  REFERENCES `course` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
