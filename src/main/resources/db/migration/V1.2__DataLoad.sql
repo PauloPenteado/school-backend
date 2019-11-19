@@ -36,3 +36,12 @@ INSERT INTO schedule(course_id, instructor_id, level, day, hour, minutes) VALUES
 	(1,1,'Debutant 1', 1, 17,45),
 	(2,2,'Debutant 2', 1, 19,45),
 	(3,4,'Debutant 3', 3, 18,45);
+	
+INSERT INTO weekday(name) VALUES 
+	('dimanche'),
+	('lundi'),
+	('mardi'),
+	('mercredi'),
+	('jeudi'),
+	('vendredi'),
+	('samedi');
