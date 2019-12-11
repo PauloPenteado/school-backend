@@ -21,7 +21,8 @@ CREATE TABLE IF NOT EXISTS `course` (
   `name` varchar(45) DEFAULT NULL,
   `description` varchar(600) DEFAULT NULL,
   `is_available` boolean DEFAULT true,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `COURSE_NAME_UNIQUE` (`name`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `plan` (
