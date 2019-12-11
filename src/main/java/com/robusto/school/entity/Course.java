@@ -30,8 +30,7 @@ public class Course {
 	@Column(name="is_available")
 	private boolean isAvailable;
 
-	@OneToMany(cascade= {CascadeType.DETACH})
-	@JoinColumn(name="course_id")
+	@OneToMany(mappedBy="course", cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<Schedule> schedules;
 	
 	public int getId() {
@@ -64,6 +63,14 @@ public class Course {
 
 	public void setAvailable(boolean isAvailable) {
 		this.isAvailable = isAvailable;
+	}
+	
+	public List<Schedule> getSchedules() {
+		return schedules;
+	}
+
+	public void setSchedules(List<Schedule> schedules) {
+		this.schedules = schedules;
 	}
 
 	public Course() {

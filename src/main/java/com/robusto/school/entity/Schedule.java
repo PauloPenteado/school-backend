@@ -20,7 +20,8 @@ public class Schedule {
 	@Column(name="id")
 	private int Id;
 	
-	@ManyToOne
+	@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	@JoinColumn(name="course_id")
 	private Course course;
 	
 	@JoinColumn(name="instructor_id")
