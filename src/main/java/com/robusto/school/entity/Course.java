@@ -1,5 +1,6 @@
 package com.robusto.school.entity;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -14,11 +15,11 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name="course")
-public class Course {
+public class Course implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="id")
+	@Column(name="id_course")
 	private int Id;
 	
 	@Column(name="name")
