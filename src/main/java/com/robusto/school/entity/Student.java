@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
+
 @Entity
 @Table(name="student")
 public class Student implements Serializable {
@@ -30,6 +32,9 @@ public class Student implements Serializable {
 	@Column(name="phone")
 	private String phone;
 	
+	@Column(name="is_vaccinated")
+	private boolean isVaccinated;
+	
 	public Student() {
 		
 	}
@@ -40,6 +45,7 @@ public class Student implements Serializable {
 		this.lastName = lastName;
 		this.email = email;
 		this.phone = phone;
+		this.isVaccinated = isVaccinated;
 	}
 
 
@@ -83,11 +89,17 @@ public class Student implements Serializable {
 		this.phone = phone;
 	}
 
+	public boolean isVaccinated() {
+		return isVaccinated;
+	}
+
+	public void setVaccinated(boolean isVaccinated) {
+		this.isVaccinated = isVaccinated;
+	}
+
 	@Override
 	public String toString() {
-		return "Student [id=" + Id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phone=" + phone + "]";
+		return "Student [Id=" + Id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
+				+ ", phone=" + phone + ", isVaccinated=" + isVaccinated + "]";
 	}
-	
-	
 }

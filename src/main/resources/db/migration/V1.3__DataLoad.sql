@@ -5,14 +5,14 @@ INSERT INTO `employee` VALUES
 	(4,'Yuri','Petrov','yuri@luv2code.com','(581) 795-4856'),
 	(5,'Juan','Vega','juan@luv2code.com','(581) 765-8472');
 	
-INSERT INTO student(first_name, last_name, email, phone) VALUES 
-	('Andrei','Colombe','',''),
-	('Elisa','Santos','lisantos@gmail.com','(425) 425-4236'),
-	('Isabelle','Laflamme','belle.isa@hotmail.com','(471) 905-4278'),
-	('Yuri','Petrov','yuri@luv2code.com','(581) 795-4856'),
-	('Juan','Vega','juan@luv2code.com','(581) 765-8472'),
-    ('Marina','Ferreri','marina.ferreri@hotmail.it',''),
-    ('Denis','Berenger','denis.ber@gmail.com','(581) 772-8752');	
+INSERT INTO student(first_name, last_name, email, phone, is_vaccinated) VALUES 
+	('Andrei','Colombe','','', false),
+	('Elisa','Santos','lisantos@gmail.com','(425) 425-4236', true),
+	('Isabelle','Laflamme','belle.isa@hotmail.com','(471) 905-4278', true),
+	('Yuri','Petrov','yuri@luv2code.com','(581) 795-4856', false),
+	('Juan','Vega','juan@luv2code.com','(581) 765-8472', true),
+    ('Marina','Ferreri','marina.ferreri@hotmail.it','', true),
+    ('Denis','Berenger','denis.ber@gmail.com','(581) 772-8752', false);	
     
     
 INSERT INTO course(name, description, is_available) VALUES 

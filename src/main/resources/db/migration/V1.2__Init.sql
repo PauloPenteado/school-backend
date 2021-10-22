@@ -13,15 +13,16 @@ CREATE TABLE IF NOT EXISTS `student` (
   `last_name` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
   `phone` varchar(15) DEFAULT NULL,
+  `is_vaccinated` boolean DEFAULT false,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `course` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_course` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) DEFAULT NULL,
   `description` varchar(600) DEFAULT NULL,
   `is_available` boolean DEFAULT true,
-  PRIMARY KEY (`id`),
+  PRIMARY KEY (`id_course`),
   UNIQUE KEY `COURSE_NAME_UNIQUE` (`name`) 
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
@@ -45,11 +46,7 @@ CREATE TABLE IF NOT EXISTS `schedule` (
   `day` INT(1) DEFAULT NULL,
   `hour` INT(2) DEFAULT NULL,
   `minutes` INT(2) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  CONSTRAINT `FK_INSTRUCTOR` FOREIGN KEY (`instructor_id`)
-  REFERENCES `employee` (`id`),
-  CONSTRAINT `FK_COURSE` FOREIGN KEY (`course_id`)
-  REFERENCES `course` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS `weekday` (
