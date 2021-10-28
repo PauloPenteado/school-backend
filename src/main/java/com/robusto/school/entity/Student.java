@@ -11,6 +11,7 @@ import javax.persistence.Table;
 
 import lombok.Data;
 
+@Data
 @Entity
 @Table(name="student")
 public class Student implements Serializable {
@@ -46,60 +47,5 @@ public class Student implements Serializable {
 		this.email = email;
 		this.phone = phone;
 		this.isVaccinated = isVaccinated;
-	}
-
-
-	public int getId() {
-		return Id;
-	}
-
-	public void setId(int id) {
-		this.Id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	public boolean isVaccinated() {
-		return isVaccinated;
-	}
-
-	public void setVaccinated(boolean isVaccinated) {
-		this.isVaccinated = isVaccinated;
-	}
-
-	@Override
-	public String toString() {
-		return "Student [Id=" + Id + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phone=" + phone + ", isVaccinated=" + isVaccinated + "]";
 	}
 }
